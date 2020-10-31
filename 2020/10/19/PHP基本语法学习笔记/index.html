@@ -111,9 +111,9 @@
     <v-divider></v-divider>
     
         <div class="post-toc">
-            <a href="/2020/10/19/typora/" class="toc-header">Table of Contents</a>
+            <a href="/2020/10/19/PHP%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="toc-header">Table of Contents</a>
             <div class="toc-content">
-                
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">PHP基本语法学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">数组</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
             </div>
         </div>
     
@@ -220,7 +220,7 @@
     
     
         <div class="post-header">
-  <a class="post-header-title font-weight-medium" href="/2020/10/19/typora/"></a>
+  <a class="post-header-title font-weight-medium" href="/2020/10/19/PHP%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"></a>
   <div class="post-header-meta">   
     <span>
       <v-icon color="">event</v-icon>
@@ -228,7 +228,7 @@
     </span>
     <span>
       <v-icon color="">event_available</v-icon>
-      Edited on:&nbsp;2020-10-19
+      Edited on:&nbsp;2020-10-31
     </span>
     <span>
       <v-icon color="">folder</v-icon>
@@ -248,8 +248,7 @@
     
     
     <div class="post-content typo">
-        <p>PHP基本语法学习笔记（上）</p>
-<p>软件安装：phpstudy，naivcat</p>
+        <h1 id="PHP基本语法学习笔记"><a href="#PHP基本语法学习笔记" class="headerlink" title="PHP基本语法学习笔记"></a>PHP基本语法学习笔记</h1><p>软件安装：phpstudy，naivcat</p>
 <p>一.PHP的4种标记风格   感觉像开头和结尾</p>
 <p>1.XML风格  <?   //  ?></p>
 <p>2.短标签风格  <?  //  ?></p>
@@ -287,6 +286,43 @@
 <p><img src="https://i.loli.net/2020/10/19/nF3SdspI7Qxt1Ma.png" alt="屏幕截图_16_.png"></p>
 <p>switch语句</p>
 <p><img src="https://i.loli.net/2020/10/19/zgcn9KQIUTOMeB8.png"></p>
+<p>四.PHP数组</p>
+<ul>
+<li><h5 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h5><ul>
+<li><p>数组是特殊的变量，它可以同时保存一个以上的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$var1 &#x3D; &quot;1&quot;;</span><br><span class="line">$var2 &#x3D; &quot;2&quot;;</span><br><span class="line">$var3 &#x3D; &quot;3&quot;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>在 PHP 中， array() 函数用于创建数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PHP中有三种数组类型：</p>
+<ul>
+<li><p>索引数组 - 带有数字索引的数组</p>
+</li>
+<li><p>关联数组 - 带有指定键的数组</p>
+</li>
+<li><p>多维数组 - 包含一个或多个数组的数组</p>
+</li>
+<li><pre><code class="PHP"> //关联数组
+$age=array(&quot;Peter&quot;=&gt;&quot;35&quot;,&quot;Ben&quot;=&gt;&quot;37&quot;,&quot;Joe&quot;=&gt;&quot;43&quot;);
+foreach($age as $x=&gt;$x_value) //(原数组 as )
+&#123;
+echo &quot;Key=&quot; . $x . &quot;, Value=&quot; . $x_value;
+echo &quot;&lt;br&gt;&quot;;
+&#125;
+?&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 自动分配索引：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  $vals=array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;);//索引从0开始
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 手动分配索引：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  $vals[0]=&quot;1&quot;;
+  $vals[1]=&quot;2&quot;;
+  $vals[2]=&quot;3&quot;;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
 <p>总结：PHP基本语法还没全部学好，只学了一部分，接下来还要继续学，但感觉一开始好像是把这些背好，弄熟练</p>
 
     </div>
@@ -300,7 +336,7 @@
     
     <div class="post-nav">             
         
-            <v-btn text class="font-weight-bold" href="/2020/10/25/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+            <v-btn text class="font-weight-bold" href="/2020/10/30/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20(2)/">
                 <v-icon>chevron_left</v-icon>
                 
             </v-btn> 

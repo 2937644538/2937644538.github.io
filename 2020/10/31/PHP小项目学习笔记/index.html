@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.30/dist/vuetify.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+              
+    
+    
+    
+    
+    
+    <title>
+          
+            Hexo
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-content id="page">
+                <v-container fluid>
+                    <v-row>
+                        <v-col cols="2" class="d-none d-md-block">
+                            <div id="sidebar" class="float-right">
+    <a href="/" rel="home">
+        <v-avatar size=96>
+            <img id="logo" src="/images/avatar.webp">     
+        </v-avatar> 
+    </a>
+    <v-divider></v-divider>
+    <div class="mini-menu">
+        <v-btn icon href="/">
+            <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn icon href="/categories/">
+            <v-icon>folder</v-icon>
+        </v-btn>
+        <v-btn icon href="/tags/">
+            <v-icon>bookmark</v-icon>
+        </v-btn>
+        <v-btn icon @click="SetNightMode">
+            <v-icon>{{ nightMode }}</v-icon>
+        </v-btn>
+    </div>
+    <v-list id="main-menu" class="font-weight-bold" flat>
+        
+            
+            <v-list-item href="/archives/" link>
+            <v-list-item-icon><v-icon>archive</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Archives
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="/about/" link>
+            <v-list-item-icon><v-icon>account_circle</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                About
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="https://garybear.cn/" link>
+            <v-list-item-icon><v-icon>rss_feed</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                我的博客
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="https://garybear.cn/hexo-theme-insulin/doc/#/" link>
+            <v-list-item-icon><v-icon>insert_drive_file</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                说明文档
+            </v-list-item-content>
+            </v-list-item>
+        
+    </v-list>
+    <v-divider></v-divider>
+    
+        <div class="post-toc">
+            <a href="/2020/10/31/PHP%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="toc-header">Table of Contents</a>
+            <div class="toc-content">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">PHP小项目学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">数据库设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">前端网页设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.1.</span> <span class="toc-text">登陆界面设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.2.</span> <span class="toc-text">注册页面的设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%99%E8%A8%80%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.3.</span> <span class="toc-text">留言页面的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.3.1.</span> <span class="toc-text">留言人</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.</span> <span class="toc-text">后端程序设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-number">4.0.1.</span> <span class="toc-text">路由</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5"><span class="toc-number">4.1.</span> <span class="toc-text">数据库连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.2.</span> <span class="toc-text">注册页面程序设计</span></a></li></ol></li></ol>
+            </div>
+        </div>
+    
+
+    <div id="footer">
+        <div class="footer-social">
+            
+                
+                <v-btn icon href="mailto:kb1000fx@gmail.com" target="_blank">
+                    <v-icon>fas fa-envelope</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://github.com/kb1000fx" target="_blank">
+                    <v-icon>fab fa-github</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://steamcommunity.com/profiles/76561198346798163" target="_blank">
+                    <v-icon>fab fa-steam</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://weibo.com/kb1000fx" target="_blank">
+                    <v-icon>fab fa-weibo</v-icon>
+                </v-btn>
+            
+        </div>
+        <v-divider></v-divider>
+        <div class="footer-content">
+            
+                <span id="busuanzi_container_site_uv" style="display: none;"> 
+                    Total Visitors <span id="busuanzi_value_site_uv"></span>
+                </span>
+                <br>
+            
+            <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a></span><br>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+            <span>
+                &copy; 2015 - 2020 
+                John Doe
+            </span>
+        </div>
+    </div>
+</div>
+
+                        </v-col>
+                        <v-col cols="12" md="10">
+                            <v-row>
+  <v-col cols="12" md="8" align-self="end">
+    <div id="site-header">
+      <div id="site-title">
+        <a href="/" rel="home">Hexo</a>
+      </div>
+      <div id="site-description"></div>
+      <div id="mobile-menu" class="d-block d-md-none">
+        <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+        <div class="mobile-mini-menu">
+          <v-btn icon href="/">
+              <v-icon>home</v-icon>
+          </v-btn>
+          <v-btn icon href="/categories/">
+              <v-icon>folder</v-icon>
+          </v-btn>
+          <v-btn icon href="/tags/">
+              <v-icon>bookmark</v-icon>
+          </v-btn>
+          <v-btn icon @click="SetNightMode">
+              <v-icon>{{ nightMode }}</v-icon>
+          </v-btn>
+          
+            
+            <v-btn icon href="/archives/">
+              <v-icon>archive</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="/about/">
+              <v-icon>account_circle</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/">
+              <v-icon>rss_feed</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/hexo-theme-insulin/doc/#/">
+              <v-icon>insert_drive_file</v-icon>
+            </v-btn>
+          
+        </div>
+      </div>    
+    </div>
+  </v-col>  
+  <v-col cols="4" align-self="end" class="d-none d-md-block">
+    <v-col align-self="end">
+      <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+    </v-col> 
+  </v-col>
+</v-row>
+
+                            <v-card class="elevation-2 post-card">
+    
+    
+        <div class="post-header">
+  <a class="post-header-title font-weight-medium" href="/2020/10/31/PHP%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"></a>
+  <div class="post-header-meta">   
+    <span>
+      <v-icon color="">event</v-icon>
+      Posted on:&nbsp;2020-10-31
+    </span>
+    <span>
+      <v-icon color="">event_available</v-icon>
+      Edited on:&nbsp;2020-10-31
+    </span>
+    <span>
+      <v-icon color="">folder</v-icon>
+      In:&nbsp;Uncategorized
+    </span>
+    
+    <span>
+      <v-icon color="">visibility</v-icon>
+      Views:&nbsp;<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+    </span>
+    
+  </div>
+</div>
+
+    
+    
+    
+    
+    <div class="post-content typo">
+        <h1 id="PHP小项目学习笔记"><a href="#PHP小项目学习笔记" class="headerlink" title="PHP小项目学习笔记"></a>PHP小项目学习笔记</h1><h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><p>新建user表，重点注意在id字段，选择自动递增，默认初始值为1</p>
+<p><img src="https://i.loli.net/2020/10/31/dZ7XAMDfzVywk4h.png" alt="8e26e4618983ece0164a61d69e3f824.png"></p>
+<p><img src="https://i.loli.net/2020/10/31/QZGim3VwrUs1E9Y.png" alt="235cb20e4ed26e8b80e0b0c8776b84d.png"></p>
+<h1 id="前端网页设计"><a href="#前端网页设计" class="headerlink" title="前端网页设计"></a>前端网页设计</h1><h2 id="登陆界面设计"><a href="#登陆界面设计" class="headerlink" title="登陆界面设计"></a>登陆界面设计</h2><p>首先，在网站根目录新建一个目录<code>app</code>,在<code>app</code>目录里面新建一个login.php</p>
+<p><img src="https://i.loli.net/2020/10/30/Z97dsvjoPOLfQYR.png" alt="a13158670054ef6651e2cb9ce34e507.png"></p>
+<p><img src="https://i.loli.net/2020/10/30/xXm6ca4pNE2A3TY.png" alt="80b3fdc2c285b6be79b43649ac934c6.png"></p>
+<p>然后，一步步美化网站标签对输入框和按钮进行多行处理，并使用<code>&lt;a&gt;</code>标签标示各个输入框的作用</p>
+<p><img src="https://i.loli.net/2020/10/30/wh7p1aLRIN4ki6z.png" alt="69ecd6490f00423a74686d9f68b0f16.png"></p>
+<p>2.我们在网站根目录建立一个<code>images</code>文件夹,将我们的背景文件放进去,添加一个<code>&lt;style type=&quot;text/css&quot;&gt;</code>来编写我们的样式：</p>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>解释c</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>background-image: url(../images/bg.jpg);</td>
+<td>指定背景图片地址</td>
+</tr>
+<tr>
+<td>background-position: center;</td>
+<td>指定背景图片定位为居中</td>
+</tr>
+<tr>
+<td>background-size: cover;</td>
+<td>指定背景图片的大小为自动拉伸</td>
+</tr>
+<tr>
+<td>background-repeat: no-repeat</td>
+<td>指定背景图片选择只显示一次</td>
+</tr>
+<tr>
+<td>min-height: 100vh;</td>
+<td>最小高度为视窗的100%</td>
+</tr>
+</tbody></table>
+<p><img src="https://i.loli.net/2020/10/30/BM1rcX6sJtLANmH.png" alt="7c90e9e743dd115927fecf41a1f02a8.png"></p>
+<p><img src="https://i.loli.net/2020/10/30/KWv24TucI3kstHn.png" alt="25e74f08f8173a0729c505b2b761896.png"></p>
+<p>*一开始时用代码发现出现乱码，然后去网上查了再加一段代码就可以了<meta http-equiv='Content-Type' content='text/html; charset=utf-8' /> 要放在head后面</p>
+<ul>
+<li><p>3.我们先改变一下按钮的大小和形状，输入框的大小和形状也同时改变，我们在刚刚新建的style上新建一个样式<code>.button</code>，再新建一个样式<code>.input</code></p>
+</li>
+<li><p><code>.button</code></p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color: #ffff;</td>
+<td>字体颜色为白色#fff可以在ps中取色板中得到</td>
+</tr>
+<tr>
+<td>width: 410px;</td>
+<td>宽度为410个像素</td>
+</tr>
+<tr>
+<td>border:1px solid #55b7e9;</td>
+<td>外边框边框线的宽度为1个像素，实线，颜色为#55b7e9</td>
+</tr>
+<tr>
+<td>border-radius: 2px;</td>
+<td>圆角为2个像素</td>
+</tr>
+<tr>
+<td>background-color: #55b7e9;</td>
+<td>背景颜色为#55b7e9;</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><code>.input</code>,不重复解释，意思如上，但是需要注意在<code>&lt;input class=&#39;input&#39; type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;账户&quot;&gt;</code>观察代码发现多了个<code>class=&#39;input&#39;</code>，说明样式需要绑定到指定的标签中。</p>
+<p><img src="https://i.loli.net/2020/10/30/KZYFxjn1Grlc89D.png" alt="088a860b625b45f00635ef2911c2112.png"></p>
+<ul>
+<li>4.我们还需要一个白色的框框将其框起来，定义一个<code>class</code>样式<code>.box</code>，定义一个<code>div</code>将其绑定这个属性</li>
+<li><code>.box</code>，<code>.inputbox</code>，<code>.boxtitle</code>部分属性解释。注意设置多种属性的透明度是为了适应各种浏览器，这里上方重复的属性不再解释</li>
+<li><img src="https://i.loli.net/2020/10/30/JhDdSbElYfqNsmy.png"></li>
+</ul>
+<p><img src="https://i.loli.net/2020/10/30/OmWtRPcUwvbxZCu.png" alt="bcc5af744b31f8a10dc4624c702e893.png"></p>
+<h2 id="注册页面的设计"><a href="#注册页面的设计" class="headerlink" title="注册页面的设计"></a>注册页面的设计</h2><p>注册页面直接新建一个reg.php，复制login.php代码并增加一个密码输入框：</p>
+<p><img src="https://i.loli.net/2020/10/30/JhDdSbElYfqNsmy.png" alt="d7b9b490c27431829a91cb3e8aa869a.png"></p>
+<p><img src="https://i.loli.net/2020/10/30/CJqm7AOHzLScDsB.png" alt="5e4490c7fb28f1e777072d0ce16b080.png"></p>
+<h2 id="留言页面的设计"><a href="#留言页面的设计" class="headerlink" title="留言页面的设计"></a>留言页面的设计</h2><p>依旧还是输入代码</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>留言</title>
+    <style type="text/css">
+        body {
+            background-image: url(../images/bg.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+        .button{
+            color: #ffff;
+            width: 410px;
+            height: 47px;
+            border:1px solid #55b7e9;
+            border-radius: 2px;    
+            background-color: #55b7e9;
+        }
+
+
+<pre><code>    .box&#123;
+        filter:alpha(Opacity=80);
+        -moz-opacity:0.8;
+        opacity: 0.8;
+        border-radius: 1px solid #eee;
+        box-shadow:1px 1px 50px #eee;
+        width: 460px;
+        height:340px;
+        margin:auto; 
+        margin-top: 220px;
+        border-radius: 6px;
+        background-color: #fff
+    &#125;
+
+    .messgbox&#123;
+        filter:alpha(Opacity=80);
+        -moz-opacity:0.8;
+        opacity: 0.8;
+        border-radius: 1px solid #eee;
+        box-shadow:1px 1px 50px #eee;
+        width: 460px;
+        height:200px;
+        margin:auto; 
+        margin-top: 20px;
+        border-radius: 6px;
+        background-color: #fff
+    &#125;
+    .inputbox&#123;
+            width: 410px;
+            margin:auto;
+            padding-top: 10px;
+    &#125;
+    .boxtitle&#123;
+            width: 410px;
+            margin:auto;
+            padding-top: 10px;
+            text-align:center;
+            color: #cdd6d8;
+    &#125;
+    .user&#123;
+            width: 410px;
+            margin:auto;
+            padding-top: 10px;
+
+            color: #cdd6d8;
+    &#125;
+    textarea&#123;
+        resize:none;
+        border: 1px solid #cdd6d8;
+        border-radius: 2px;
+        height: 120px;
+        width: 410px;</code></pre>
+<p>}<br>    </style></p>
+</head>
+<body >
+
+<pre><code>&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;boxtitle&quot;&gt;
+    &lt;p&gt;&lt;h3&gt;&lt;strong&gt;留言&lt;/strong&gt;&lt;/h3&gt;&lt;/p&gt;
+&lt;/div &gt;
+    &lt;div class=&quot;inputbox&quot;&gt;
+&lt;form action=&quot;&quot; method=&quot;POST&quot;&gt;
+    &lt;p&gt;&lt;textarea&gt;&lt;/textarea&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input class=&quot;button&quot; type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;留言&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+
+<div class="messgbox">
+        <div class="user">
+        <p><h3><strong>留言人</strong></h3></p>
+    </div >
+        <div class="inputbox">
+            <p style=" word-wrap:break-word;color: #cdd6d8;">留言内容</p>
+        </div>
+</div>
+
+</body>
+</html>
+
+<p><img src="https://i.loli.net/2020/10/30/7I2nKkg8J3GjqEf.png" alt="62e607b473cf8d9f86a27f66d4cdf24.png"></p>
+<h1 id="后端程序设计"><a href="#后端程序设计" class="headerlink" title="后端程序设计"></a>后端程序设计</h1><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><ul>
+<li>路由我们使用文件包含实现，通过GET传参来确定包含不同的页面以实现不同页面的显示，在网站根目录新建一个index.php</li>
+</ul>
+<?php
+include('app/conn.php');//包含数据库连接文件
+
+if(isset($_GET['s'])){
+    $router = $_GET['s'];
+}else{
+    $router='list';
+}
+switch ($router) {
+    case 'login':
+        include('app/login.php');
+        break;
+    case 'list':
+        include('app/list.php');
+        break;
+    case 'reg':
+        include('app/reg.php');
+        break;
+
+}
+?>
+
+<p>输入s=login就能将登陆界面包含进来</p>
+<h2 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h2><p>在app文件夹新建一个<code>conn.php</code>，输入代码</p>
+<?php
+date_default_timezone_set('Asia/Shanghai');//设置时区
+header("Content-Type: text/html;charset=utf-8");//设置当前文本编码
+$server = "127.0.0.1";
+$username = "root";
+$passwd = "root";
+$dbname = "mybook";
+$conn = new mysqli($server,$username,$passwd,$dbname);
+if ($conn->connect_error<>0){
+    die("Error".$conn->connect_error);
+}
+$conn->set_charset('utf8')or die("set charset fail");
+?>
+
+<h2 id="注册页面程序设计"><a href="#注册页面程序设计" class="headerlink" title="注册页面程序设计"></a>注册页面程序设计</h2><ul>
+<li><p>在reg.php基础上编写</p>
+</li>
+<li><p><code>isset($_POST[&#39;username&#39;])</code>主要是为了检测表单是否提交。</p>
+</li>
+<li><p><code>$_POST[&#39;password&#39;]===$_POST[&#39;password2&#39;]&amp;&amp;!empty($_POST[&#39;password&#39;])&amp;&amp;!empty($_POST[&#39;username&#39;])</code>主要是检测两次密码输入是否一致。而且密码和用户名不为空.</p>
+</li>
+</ul>
+<blockquote>
+<p>empty()检查变量是否为空如果是空返回true</p>
+<p>trim()去除字符串中的空格</p>
+<p>md5() :字符串采用md5加密的方式加密，这里密码使用了md5加密</p>
+</blockquote>
+<ul>
+<li><p><code>$data-&gt;num_rows;</code>num_rows属性返回查询到的数据条数，我们这里先执行查询数据库中的这个用户名条数是否是0，如果是0则执行插入操作</p>
+</li>
+<li><p><code>&quot;&lt;script &gt;window.location.href=\&quot;index.php?s=login\&quot;;alert(&#39;注册成功&#39;)&lt;/script&gt;&quot;;</code>打印弹框并跳转到登陆界面，输入代码</p>
+</li>
+<li><?php
+if(isset($_POST['username'])){
+    if($_POST['password']===$_POST['password2']&&!empty($_POST['password'])&&!empty($_POST['username'])){
+    $data = $conn->query("SELECT * FROM user WHERE username='{$_POST['username']}'");
+    $user_count = $data->num_rows;
+    if(!$user_count){
+        $password = md5(trim($_POST['password']));
+        $username = trim($_POST['username']);
+        $data = $conn->query("INSERT INTO user(username,password)VALUES('$username','$password')");
+        echo "<script >alert('注册成功');window.location.href=\"index.php?s=login\";</script>";
+    }else{
+        echo "<script >alert('用户名已存在')</script>";
+    }
+
+}else{
+    echo "<script >alert('两次密码不一致或表单为空')</script>";
+}
+}
+?>
+
+
+</li>
+</ul>
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>注册</title>
+      <style type="text/css">
+          body {
+              background-image: url(../images/bg.jpg);
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+              min-height: 100vh;
+          }
+          .button{
+              color: #ffff;
+              width: 410px;
+              height: 47px;
+              border:1px solid #55b7e9;
+              border-radius: 2px;    
+              background-color: #55b7e9;
+          }
+          .input{
+              width: 410px;
+              height: 47px;
+              border-radius: 5px;    
+               font-size: 20px;
+               padding-left: 5px;
+              border:1px solid #c0d0d3;
+          }
+          .box{
+              filter:alpha(Opacity=80);
+              -moz-opacity:0.8;
+              opacity: 0.8;
+              border-radius: 1px solid #eee;
+              box-shadow:1px 1px 50px #eee;
+              width: 460px;
+              height:370px;
+              margin:auto; 
+              margin-top: 220px;
+              border-radius: 6px;
+              background-color: #fff
+          }
+          .inputbox{
+                  width: 410px;
+                  margin:auto;
+                  padding-top: 10px;
+          }
+          .boxtitle{
+                  width: 410px;
+                  margin:auto;
+                  padding-top: 10px;
+                  text-align:center;
+                  color: #cdd6d8;
+          }
+      </style>
+
+  </head>
+  <body >
+
+<pre><code>  &lt;div class=&quot;box&quot;&gt;
+      &lt;div class=&quot;boxtitle&quot;&gt;
+      &lt;p&gt;&lt;h3&gt;&lt;strong&gt;注册&lt;/strong&gt;&lt;/h3&gt;&lt;/p&gt;
+  &lt;/div &gt;
+      &lt;div class=&quot;inputbox&quot;&gt;
+  &lt;form action=&quot;&quot; method=&quot;POST&quot;&gt;
+      &lt;p&gt;&lt;input class=&#39;input&#39; type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;账户&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;input class=&#39;input&#39;  type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;密码&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;input class=&#39;input&#39;  type=&quot;password&quot; name=&quot;password2&quot; placeholder=&quot;确认密码&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;input class=&quot;button&quot; type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;注册&quot;&gt;&lt;/p&gt;
+  &lt;/form&gt;
+      &lt;/div&gt;</code></pre>
+  </div>
+
+  </body>
+  </html>
+
+<ul>
+<li><p>然而出现问题了，暂时还不知道怎么解决，正在求助大佬</p>
+<p><img src="https://i.loli.net/2020/10/31/Yr6uBhTHaZiV2Fs.png" alt="796bf54d6437babaecf5818ff6ab492.png"></p>
+</li>
+<li></li>
+<li></li>
+</ul>
+
+    </div>
+    <!--文末结束语-->
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="fas fa-heart"></i> The End --- </div>
+    
+    <!--页脚广告-->
+    
+    <v-divider></v-divider>
+    
+    <div class="post-nav">             
+        
+            <v-btn text disabled></v-btn>
+        
+          
+            <v-btn text class="float-right font-weight-bold" href="/2020/10/30/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20(2)/">      
+                
+                <v-icon>chevron_right</v-icon>
+            </v-btn>
+        
+    </div>
+</v-card>
+
+
+
+        
+                            <div id="mobile-footer" class="d-block d-md-none">
+                                <v-divider></v-divider>
+                                <div id="mobile-footer-content">
+                                    <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a> &nbsp; Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+                                    <span> &copy; 2015 - 2020 John Doe</span>
+                                </div>
+                            </div>                   
+                        </v-col>                                            
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.30"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+
+
+
+</body>
+</html>
